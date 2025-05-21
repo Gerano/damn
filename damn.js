@@ -12,22 +12,11 @@ const port = process.env.PORT || 8080,
             res.statusCode = 200;
             res.setHeader("Content-Type", "text/plain");
             res.end("uwu");
-        } else {
-            res.statusCode = 404;
-            res.end("Not Found");
         }
       });
 
 server.listen(port, () => {
     console.log(`HTTP server is running on port ${port}`);
-});
-
-bot.on("messageCreate", message => {
-    console.log(`Message received from ${message.author.username}: ${message.content}`);
-});
-
-bot.on("error", error => {
-    console.error("An error occurred:", error);
 });
 
 bot.connect();
